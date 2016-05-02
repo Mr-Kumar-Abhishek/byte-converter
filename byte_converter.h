@@ -4,6 +4,7 @@
 #include <QDialog>
 
 class QLineEdit;
+class QString;
 
 class byte_converter : public QDialog {
 
@@ -12,6 +13,10 @@ class byte_converter : public QDialog {
 	public:
 
 		byte_converter();
+
+	private slots:
+
+		void decimal_changed(const QString&);
 
 	private:
 		QLineEdit* decimal_line;

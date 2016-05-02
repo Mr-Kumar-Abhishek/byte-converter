@@ -56,6 +56,19 @@ byte_converter::byte_converter(){
 
 	setWindowTitle(tr("Byte Converter"));
 
+	connect(decimal_line, SIGNAL(textChanged(const QString&)), this, SLOT(decimal_changed(const QString&)));
 	connect(quit_btn, SIGNAL(clicked()), this, SLOT(accept()));
 
+}
+
+void byte_converter::decimal_changed(const QString& newVal) {
+	bool okay;
+	int num = newVal.toInt(&okay);
+	if (okay) {
+		hexadecimal_line->setText(QString::number(num, 16));
+		binary_line->setText(QString::number(num, 2));
+	}else {
+		hexadecimal_line->setText("");
+		binary_line->setText("");
+	}
 }
