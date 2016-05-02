@@ -22,26 +22,33 @@ static const uint qt_meta_data_byte_converter[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
+       1,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
 
+ // slots: signature, parameters, type, tag, flags
+      16,   15,   15,   15, 0x08,
+
        0        // eod
 };
 
 static const char qt_meta_stringdata_byte_converter[] = {
-    "byte_converter\0"
+    "byte_converter\0\0decimal_changed(QString)\0"
 };
 
 void byte_converter::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    Q_UNUSED(_o);
-    Q_UNUSED(_id);
-    Q_UNUSED(_c);
-    Q_UNUSED(_a);
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        Q_ASSERT(staticMetaObject.cast(_o));
+        byte_converter *_t = static_cast<byte_converter *>(_o);
+        switch (_id) {
+        case 0: _t->decimal_changed((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        default: ;
+        }
+    }
 }
 
 const QMetaObjectExtraData byte_converter::staticMetaObjectExtraData = {
@@ -75,6 +82,11 @@ int byte_converter::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 1)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 1;
+    }
     return _id;
 }
 QT_END_MOC_NAMESPACE
