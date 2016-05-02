@@ -1,0 +1,4 @@
+*.o
+byte-converter
+Makefile
+make
