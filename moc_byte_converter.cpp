@@ -22,7 +22,7 @@ static const uint qt_meta_data_byte_converter[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -32,6 +32,7 @@ static const uint qt_meta_data_byte_converter[] = {
  // slots: signature, parameters, type, tag, flags
       16,   15,   15,   15, 0x08,
       41,   15,   15,   15, 0x08,
+      66,   15,   15,   15, 0x08,
 
        0        // eod
 };
@@ -39,6 +40,7 @@ static const uint qt_meta_data_byte_converter[] = {
 static const char qt_meta_stringdata_byte_converter[] = {
     "byte_converter\0\0decimal_changed(QString)\0"
     "heximal_changed(QString)\0"
+    "binary_changed(QString)\0"
 };
 
 void byte_converter::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -49,6 +51,7 @@ void byte_converter::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         switch (_id) {
         case 0: _t->decimal_changed((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 1: _t->heximal_changed((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 2: _t->binary_changed((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -86,9 +89,9 @@ int byte_converter::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 3;
     }
     return _id;
 }

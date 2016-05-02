@@ -58,6 +58,7 @@ byte_converter::byte_converter(){
 
 	connect(decimal_line, SIGNAL(textChanged(const QString&)), this, SLOT(decimal_changed(const QString&)));
 	connect(hexadecimal_line, SIGNAL(textChanged(const QString&)), this, SLOT(heximal_changed(const QString&)));
+	connect(binary_line, SIGNAL(textChanged(const QString&)), this, SLOT(binary_changed(const QString&)));
 	connect(quit_btn, SIGNAL(clicked()), this, SLOT(accept()));
 
 }
@@ -86,3 +87,14 @@ void byte_converter::heximal_changed(const QString& newVal) {
 	}
 }
 
+void byte_converter::binary_changed(const QString& newVal){
+	bool okay_bin;
+	int num = newVal.toInt(&okay_bin, 2);
+	if (okay_bin) {
+		decimal_line->setText(QString::number(num));
+		hexadecimal_line->setText(QString::number(num, 16));
+	}else {
+		decimal_line->setText("");
+		hexadecimal_line->setText("");
+	}
+}
