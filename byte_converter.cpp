@@ -51,7 +51,7 @@ byte_converter::byte_converter(){
 	QRegExpValidator* heximal_validator = new QRegExpValidator(QRegExp("[0-9A-Fa-f]{1,2}"), hexadecimal_line);
 	hexadecimal_line->setValidator(heximal_validator);
 
-	QRegExpValidator* binary_validator = new QRegExpValidator(QRegExp("[02]{1,8}"), binary_line);
+	QRegExpValidator* binary_validator = new QRegExpValidator(QRegExp("[01]{1,8}"), binary_line);
 	binary_line->setValidator(binary_validator);
 
 	setWindowTitle(tr("Byte Converter"));
