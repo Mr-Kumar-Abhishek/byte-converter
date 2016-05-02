@@ -17,6 +17,7 @@ class byte_converter : public QDialog {
 	private slots:
 
 		void decimal_changed(const QString&);
+		void heximal_changed(const QString&);
 
 	private:
 		QLineEdit* decimal_line;
