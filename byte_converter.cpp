@@ -38,7 +38,7 @@ byte_converter::byte_converter(){
 	// Create quit button
 
 	QPushButton* quit_btn = new QPushButton(tr("Quit"), this);
-	hbox->addWidget(quit_btn);
+	hbox->addWidget(quit_btn, 0, Qt::AlignRight);
 
 	quit_btn->setDefault(true);
 
